@@ -1,0 +1,7 @@
+<%= linked_to "current_user",current_user%><br/>
+
+<%=current_user.name%> <br/>
+
+<%= linked_to "my profile", current_user%>
+<br/>
+<%= pluralize(current_user.posts.count),"Posts"%>

@@ -1,0 +1,27 @@
+<ul>
+	<%=form_for @user do |f|%>
+		<%=render 'shared/error_messages', object: f.object%>
+ <!-- 	<%= @user.errors.count%>
+ 		<% if @user.errors.any? %>
+ 			<ul>
+ 				<%@user.errors.full_messages.each do |m|%>
+ 					<%=m%>
+ 				<%end%>
+ 			</ul>
+ 		<%end%> -->
+    <%end%>
+</ul>
+<% User.all.each do |u|%>
+	name:<li><%=u.name%></li>
+	pwd:<li><%=u.password%></li>	
+	email:<li><%=u.email%></li>	
+	<%if u.admin == false%>
+	<%=link_to "delete", u, method: :delete,data:{confirm:"You sure?"}%>
+	<%end%>
+<%end%>
+ </ul>
+   <%=form_for @user do |u|%>
+ 	 <%=render "fields", ff:u%>
+ 	 <%=u.submit "create account"%>
+ <%end%>  
+ 

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>BlogTest</title>
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<% flash.each do |key, value|%>
+	<%=key%>,<%=value%>
+<%end%>
+<div><%=link_to "sample", root_path,id:"logo"%></div>
+ 	<%if signed_in?%>
+ 		<%= link_to "Users", users_path%>
+		<%= link_to "Sign out", signout_path, method: "delete" %>
+		<%=link_to "settings", edit_user_path(current_user)%>
+	<%else%>
+		<%= link_to "Sign in", signin_path %>
+<%end%>
+<%= yield %>
+
+</body>
+</html>

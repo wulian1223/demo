@@ -1,0 +1,8 @@
+<li>
+	<span><%= post.content %></span>
+	<span>Posted <%=time_ago_in_words(post.created_at)%> ago.</span>
+<br/>
+<% if current_user?(post.user) %>
+	<%=link_to "delete", post_delete_path(post), method: :delete, data:{confirm: "You Sure?"},title: post.content%>
+<%end%>
+</li>

@@ -1,0 +1,22 @@
+<!--<%if @user.posts.any?%> 
+<%end%>
+-->
+
+ 	Posts:<%=link_to @user.posts.count, posts_path%><br/>
+
+	<%=link_to @user.name%>
+	<br/>
+	<%= @user.id%>
+	<br/>
+	<%=@user.remember_token%>
+	<br/>
+	<%= @user.email%>
+	<br/>
+	<%= @user.password%>
+ <br/>
+ <%= render @posts%>
+ <br/>
+@current_user.admin:<%=@current_user.admin%>
+<br/>
+
+<%=@current_user.id%>

@@ -1,0 +1,11 @@
+login!
+
+<%=@user.password%>
+<%=@user.name%>
+<%=@user.remember_token%>
+
+ </ul>
+   <%=form_for @user do |u|%>
+ 	 <%=render "fields", ff:u%>
+ 	 <%=u.submit "create account"%>
+ <%end%>  
